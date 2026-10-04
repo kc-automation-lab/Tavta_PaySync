@@ -1,0 +1,38 @@
+{
+  "products": {
+    "sku": "String (Document ID: CAT-NAM-SNT-PCK)",
+    "product_name": "String",
+    "category": "String",
+    "selling_price": "Double",
+    "cost_price": "Double",
+    "current_stock": "Integer",
+    "min_limit": "Integer",
+    "search_terms": "String"
+  },
+  "customers": {
+    "phone_number": "String (Document ID)",
+    "first_visit": "Timestamp",
+    "last_visit": "Timestamp",
+    "total_orders": "Integer",
+    "lifetime_spend": "Double",
+    "marketing_opt_in": "Boolean"
+  },
+  "orders": {
+    "order_id": "String (Document ID: ORD-YYMMDD-XXXX)",
+    "timestamp": "Timestamp",
+    "cashier_id": "String",
+    "customer_phone": "String",
+    "payment_method": "String",
+    "cart_subtotal": "Double",
+    "delivery_fee": "Double",
+    "total_amount": "Double",
+    "line_items": [
+      {
+        "sku": "String",
+        "product_name": "String",
+        "price": "Double",
+        "quantity": "Integer"
+      }
+    ]
+  }
+}
