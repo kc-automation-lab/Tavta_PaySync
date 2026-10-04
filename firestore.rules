@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Products: Cashiers can read; only managers can modify
+    match /products/{document} {
+      allow read: if request.auth != null;
+      allow write: if request.auth.token.role == 'manager'; 
+    }
+    
+    // Orders: Cashiers can create and read orders
+    match /orders/{document} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Customers: Cashiers can lookup and update customer spend
+    match /customers/{document} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
